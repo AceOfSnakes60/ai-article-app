@@ -1,5 +1,5 @@
 For the article below do the following:
- - Change the article into html <body>
+ - Change the article into html body
  - Detect and seperate titles, sub-titles and paragraphs into html format
  - Do not include any other text except the body
  - Insert an empty image where apropriate

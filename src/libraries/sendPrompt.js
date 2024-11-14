@@ -16,6 +16,7 @@ const sendPrompt = (articleText, prompt) => {
                 Authorization: `Bearer ${apiKey}`
             }
         }).then(response=>{
+            console.log(response);
             return response.data.choices[0].message.content;
         }).catch(error=>{
             console.error('Error communicating with OpenAI', error);
