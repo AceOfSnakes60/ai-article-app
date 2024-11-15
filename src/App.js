@@ -5,6 +5,7 @@ import FileUploader from './Components/FileUploader';
 import downloadTxtFile from './libraries/downloadTxtFile';
 import resultPlaceholder from './libraries/resultPlaceholder';
 import sendPrompt from './libraries/sendPrompt';
+import previewDocument from './libraries/previewDocument';
 
 function App() {
   const [promptFile, setPromptFile] = useState();
@@ -35,6 +36,9 @@ function App() {
   const handleDownload = ()=>{
     downloadTxtFile(result);
   }
+  const handlePreview = ()=>{
+    previewDocument(result);
+  }
 
 
   return (
@@ -47,8 +51,12 @@ function App() {
         <label>Text to modify:</label>
       <FileUploader handleFile={setTargetText}/>
       </div>
+      <div>
       <button onClick={handleClick} disabled={!(promptFile&&targetText)}>{!result?"Generate":"Regenerate"}</button>
-      {result&&<button onClick={handleDownload}>Download</button>}
+      {result&&<div><button onClick={handleDownload}>Download</button>
+      <button onClick={handlePreview}>Preview</button>
+      </div>}
+      </div>
       {result&&<pre>{result}</pre>}
     </div>
   );
