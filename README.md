@@ -1,12 +1,15 @@
 # AI Article App
-##By Piotr Maślanka
+By Piotr Maślanka
 
 ## How to run:
-Open the folder in IDE
-### Install all dependencies with: `npm install`
-### Create .env file in root folder
-### Add your OpenAI api key to .env like this: REACT_APP_OPENAI_API_KEY= YOUR_KEY
-### Run with `npm start`
+ - Open the folder in IDE
+ - Install all dependencies with: `npm install`
+ - Create `.env` file in root folder
+ - Add your OpenAI api key to .env like this: `REACT_APP_OPENAI_API_KEY= YOUR_KEY`
+ - Run with `npm start`
+
+## Bugs:
+ - Error popup saying: `Uncaught TypeError: Cannot convert undefined or null to object` Doesnt affect the app. Could be browser or react related.
 
 ## Available Scripts
 
