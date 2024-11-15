@@ -24,12 +24,12 @@ const FileUploader = ({handleFile})=>{
     };
 
     return(
-        <div>
+        <div className="file-uploader">
             <input type="file" accept=".txt" onChange={handleFileChange}/>
 
             {fileContent && (
-                <div>
-                    <pre>{fileContent}</pre>
+                <div className="file-content-block">
+                    <pre className="file-content">{fileContent}</pre>
                 </div>
             )}
         </div>

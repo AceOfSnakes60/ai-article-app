@@ -1,38 +1,91 @@
 .App {
-  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  margin: 20px auto;
+  max-width: 800px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.side-by-side {
+  display: flex;
+  gap: 20px; 
+  justify-content: space-between; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.block{
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  max-width: 400px;
+}
+
+.label{
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+  }
+
+  .file-content,
+  .placeholder{
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    font-family: monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 12px;
+    max-height: 200px;
+    overflow-y: auto;
+    max-width: 400px;
+  }
+
+  .file-content::-webkit-scrollbar,
+.result::-webkit-scrollbar {
+  width: 8px;
+}
+
+.file-content::-webkit-scrollbar-thumb,
+.result::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+  .result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #eef;
+    border: 1px solid #ccd;
+    white-space: prewrap;
+    word-wrap: break-word;
+    font-size: 12px;
+    max-height: 200px; 
+    overflow-y: auto; 
+    max-width: 400px;
+  }
+
+  .button{
+    padding: 10px 15px;
+    margin-right: 10px;
+    background-color: #007bff;
+    border: none;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .button:hover {
+    background-color: #0056b3;
   }
-}
+  
+  .button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .button-group {
+    margin-top: 10px;
+  }
+
+  .file-uploader input {
+    margin-top: 5px;
+  }

@@ -5,5 +5,6 @@ For the article below do the following:
  - Insert an image with alt and image_placeholder.jpg as src where apropriate
  - use at least one image for every 150 words to 350 words and place them before related text
  - dont place images between subtitles and their relevant paragraphs
+ - images must be placed before the text they are referencing in alt
  - The alt description should be relevant to the article text and describe the image 
  - Don't include '''html or body tags
