@@ -6,6 +6,8 @@ import downloadTxtFile from './libraries/downloadTxtFile';
 import resultPlaceholder from './libraries/resultPlaceholder';
 import sendPrompt from './libraries/sendPrompt';
 import previewDocument from './libraries/previewDocument';
+import insertIntoBody from "./libraries/insertIntoBody";
+
 
 function App() {
   const [promptFile, setPromptFile] = useState();
@@ -40,10 +42,26 @@ function App() {
     sendPrompt(targetText, promptFile, setResult)
   }
   const handleDownload = () => {
-    downloadTxtFile(result);
+    downloadTxtFile(result, "artykul.html");
   }
   const handlePreview = () => {
     previewDocument(result);
+  }
+  const handleDownloadPreview=()=>{
+    fetch('szablon.html')
+    .then((response)=>{
+      if(!response.ok){
+        throw new Error('Failed to fetch File');
+      }
+      console.log(response);
+      return response.text();
+    })
+    .then((template)=>{
+            const fullHTML = insertIntoBody(template, result);
+            downloadTxtFile(fullHTML, "podglad.html");
+    })
+    .catch((error)=> console.error(error))
+    
   }
 
 
@@ -79,6 +97,9 @@ function App() {
             </button>
             <button className='button' onClick={handlePreview}>
               Preview
+            </button>
+            <button className='button' onClick={handleDownloadPreview}>
+              Download Preview
             </button>
         
           </div>

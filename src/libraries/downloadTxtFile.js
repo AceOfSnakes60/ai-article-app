@@ -1,5 +1,4 @@
-const downloadTxtFile = (text)=>{
-    const filename = "artykul.html";
+const downloadTxtFile = (text, filename)=>{
 
     const blob = new Blob([text], {type: 'text/html'});
     const url = URL.createObjectURL(blob);
