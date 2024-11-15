@@ -2,9 +2,12 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import FileUploader from './Components/FileUploader';
+import sendPrompt from './libraries/sendPrompt';
 
 function App() {
   const [promptFile, setPromptFile] = useState();
+  const [targetText, setTargetText] = useState();
+  const [result, setResult] = useState();
 
   useEffect(()=>{
     fetch('prompt.txt')
@@ -19,6 +22,11 @@ function App() {
       .catch((error)=> console.error(error))
   },[])
 
+  const handleClick = ()=>{
+    sendPrompt(targetText, promptFile, setResult)
+  }
+
+
 
   return (
     <div className="App">
@@ -28,10 +36,10 @@ function App() {
       </div>
       <div>
         <label>Text to modify:</label>
-      <FileUploader/>
+      <FileUploader handleFile={setTargetText}/>
       </div>
-      <button>Submit</button>
-      
+      <button onClick={handleClick} disabled={!(promptFile&&targetText)}>Submit</button>
+      {result&&<pre>{result}</pre>}
     </div>
   );
 }

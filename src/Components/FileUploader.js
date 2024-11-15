@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const FileUploader = ()=>{
-    const [fileContent, setFileContent] = useState('');
+const FileUploader = ({handleFile})=>{
+    const [fileContent, setFileContent] = useState()
 
+    useEffect(()=>{
+        handleFile(fileContent);
+    },[fileContent])
 
     const handleFileChange = (event)=>{
         const file = event.target.files[0];
