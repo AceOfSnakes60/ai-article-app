@@ -71,6 +71,7 @@ function App() {
         >
           {!result ? "Generate" : "Regenerate"}
         </button>
+        {isLoading && <h3>Loading</h3>}
         {result && (
           <div className='button-group'>
             <button className='button' onClick={handleDownload}>
@@ -79,6 +80,7 @@ function App() {
             <button className='button' onClick={handlePreview}>
               Preview
             </button>
+        
           </div>
         )}
       </div>

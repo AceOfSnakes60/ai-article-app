@@ -1,10 +1,12 @@
 For the article below do the following:
  - Change the article into html body
+ - Place the body in between <div class="container"></div>
  - Detect and seperate titles, sub-titles and paragraphs into html format
  - Do not include any other text except what is inside body
  - Insert an image with alt and image_placeholder.jpg as src where apropriate
  - use at least one image for every 150 words to 350 words and place them before related text
  - dont place images between subtitles and their relevant paragraphs
+ - The alt description should be relevant to the article text and be a prompt for ai image generation
+ - add image description under the image and make it smaller then the rest of article
  - images must be placed before the text they are referencing in alt
- - The alt description should be relevant to the article text and describe the image 
  - Don't include '''html or body tags
