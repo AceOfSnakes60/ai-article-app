@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import FileUploader from './Components/FileUploader';
+import downloadTxtFile from './libraries/downloadTxtFile';
 import resultPlaceholder from './libraries/resultPlaceholder';
 import sendPrompt from './libraries/sendPrompt';
 
@@ -23,11 +24,17 @@ function App() {
       .catch((error)=> console.error(error))
   },[])
 
+  useEffect(()=>{
+    setResult();
+  },[targetText])
+
   const handleClick = ()=>{
     resultPlaceholder(setResult);
     //sendPrompt(targetText, promptFile, setResult)
   }
-
+  const handleDownload = ()=>{
+    downloadTxtFile(result);
+  }
 
 
   return (
@@ -41,6 +48,7 @@ function App() {
       <FileUploader handleFile={setTargetText}/>
       </div>
       <button onClick={handleClick} disabled={!(promptFile&&targetText)}>{!result?"Generate":"Regenerate"}</button>
+      {result&&<button onClick={handleDownload}>Download</button>}
       {result&&<pre>{result}</pre>}
     </div>
   );
