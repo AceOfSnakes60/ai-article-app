@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import FileUploader from './Components/FileUploader';
+import resultPlaceholder from './libraries/resultPlaceholder';
 import sendPrompt from './libraries/sendPrompt';
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
   },[])
 
   const handleClick = ()=>{
-    sendPrompt(targetText, promptFile, setResult)
+    resultPlaceholder(setResult);
+    //sendPrompt(targetText, promptFile, setResult)
   }
 
 
@@ -38,7 +40,7 @@ function App() {
         <label>Text to modify:</label>
       <FileUploader handleFile={setTargetText}/>
       </div>
-      <button onClick={handleClick} disabled={!(promptFile&&targetText)}>Submit</button>
+      <button onClick={handleClick} disabled={!(promptFile&&targetText)}>{!result?"Generate":"Regenerate"}</button>
       {result&&<pre>{result}</pre>}
     </div>
   );

@@ -1,6 +1,9 @@
 For the article below do the following:
  - Change the article into html body
  - Detect and seperate titles, sub-titles and paragraphs into html format
- - Do not include any other text except the body
- - Insert an empty image where apropriate
-
+ - Do not include any other text except what is inside body
+ - Insert an image with alt and image_placeholder.jpg as src where apropriate
+ - use at least one image for every 150 words to 350 words and place them before related text
+ - dont place images between subtitles and their relevant paragraphs
+ - The alt description should be relevant to the article text and describe the image 
+ - Don't include '''html or body tags
